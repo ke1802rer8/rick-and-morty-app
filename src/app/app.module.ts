@@ -25,15 +25,13 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
-import { HeroDetailsComponent } from './hero-details/hero-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HeroesComponent,
-    HeroDetailsComponent
+    HeroesComponent
   ],
   imports: [
     BrowserModule,
