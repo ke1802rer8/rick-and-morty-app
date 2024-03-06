@@ -1,0 +1,46 @@
+<section class="page">
+  <h1 class="page_title">СПРАВОЧНИК ПО ГЕРОЯМ RICK AND MORTY</h1>
+  <div class="container__form">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Поиск...</mat-label>
+        <input type="text" matInput placeholder="Rick Sanchez" [(ngModel)]="value" (ngModelChange)="searchHeroes($event)" [ngModelOptions]="{standalone: true}" >
+        @if (value) {
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="clearChanges()">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="page_heroes">
+    <div class="heroe_card">
+      <mat-card *ngFor="let hero of pageSlice" class="heroe_card-case" routerLink="/detail/{{hero.id}}">
+        <div class="heroe_card-img">
+          <img src="{{hero.image}}" alt="{{hero.name}}">
+        </div>
+        <div class="heroe_card-content">
+          <div class="section">
+            <a class="heroe_link">
+              <h2>{{hero.name}}</h2>
+            </a>
+            <span class="status">
+              <span class="status_icon">{{hero.status}} - {{hero.species}}</span>
+            </span>
+          </div>
+          <div class="section">
+            <span class="section_name">Последняя локация:</span>
+            <p class="text">Citadel of Ricks</p>
+          </div>
+          <div class="section">
+            <span class="section_name">Первая локация:</span>
+            <p class="text">Close Rick-counters of the Rick Kind</p>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <mat-paginator #paginator [hidePageSize]="true" [length]="allHeroes.length" [pageSize]="20" aria-label="Select page"
+      (page)="OnPageChange($event)" class="paginator">
+      </mat-paginator>
+  </div>
+</section>

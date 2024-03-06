@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  border: black;
+  -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  box-shadow: 0 10px 10px rgba(117, 212, 180, 0.795);
+}
+
+.header_container {
+  margin: 15px 0;
+}
+
+nav img {
+  width: 200px;
+}
+
+@media(max-width: 380px) {
+  nav img {
+    width: 125px;
+  }
+
+  .header_container {
+    margin: 10px 0;
+  }
+}
